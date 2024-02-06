@@ -1,0 +1,134 @@
+{
+    "considerFilterWhenGetTotal": "",
+    "useSession": "",
+    "showPageSizeSelector": "true",
+    "rowActions": [
+        {
+            "name": "Data List Hyperlink",
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_0",
+            "label": "Hyperlink",
+            "type": "text",
+            "properties": {
+                "visible": "",
+                "hrefColumn": "id",
+                "hrefParam": "d-6304176-fn_account",
+                "href": "contact_list",
+                "label": "Contacts",
+                "confirmation": "",
+                "target": "_self"
+            }
+        },
+        {
+            "name": "Data List Hyperlink",
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "id": "rowAction_1",
+            "label": "Hyperlink",
+            "type": "text",
+            "properties": {
+                "hrefColumn": "id",
+                "hrefParam": "fk_account",
+                "href": "contact_new",
+                "label": "New Contact",
+                "confirmation": "",
+                "target": "_self"
+            }
+        }
+    ],
+    "columns": [
+        {
+            "name": "id",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+                "properties": {
+                    "hrefColumn": "id",
+                    "hrefParam": "id",
+                    "href": "account_new",
+                    "label": "ID",
+                    "confirmation": "",
+                    "target": "_self"
+                }
+            },
+            "id": "column_0",
+            "label": "ID",
+            "sortable": "true"
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "accountName",
+            "action": "",
+            "id": "column_1",
+            "label": "Account Name",
+            "sortable": "true"
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "country",
+            "action": "",
+            "id": "column_5",
+            "label": "Country",
+            "sortable": "true"
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "state",
+            "action": "",
+            "id": "column_4",
+            "label": "State",
+            "sortable": "true"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "dateCreated",
+    "description": "",
+    "filters": [{
+        "name": "accountName",
+        "id": "filter_0",
+        "label": "Account Name"
+    }],
+    "showDataWhenFilterSet": "",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "buttonPosition": "bottomLeft",
+    "hidePageSize": "",
+    "checkboxPosition": "left",
+    "name": "Account Listing",
+    "id": "crm_account_list",
+    "binder": {
+        "name": "",
+        "className": "org.joget.apps.datalist.lib.FormRowDataListBinder",
+        "properties": {"formDefId": "crm_account"}
+    },
+    "actions": [
+        {
+            "name": "Data List Hyperlink Action",
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "label": "Hyperlink",
+            "id": "action_1",
+            "type": "text",
+            "properties": {
+                "visible": "true",
+                "href": "account_new",
+                "label": "Add Account",
+                "confirmation": "",
+                "datalist_type": "action",
+                "target": "_self"
+            }
+        },
+        {
+            "name": "Form Row Delete",
+            "className": "org.joget.apps.datalist.lib.FormRowDeleteDataListAction",
+            "id": "action_0",
+            "label": "Delete Row",
+            "type": "text",
+            "properties": {"formDefId": "crm_account"}
+        }
+    ],
+    "order": "1"
+}

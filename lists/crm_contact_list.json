@@ -1,0 +1,144 @@
+{
+    "considerFilterWhenGetTotal": "",
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "useSession": "",
+    "showPageSizeSelector": "true",
+    "rowActions": [],
+    "columns": [
+        {
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Account",
+            "sortable": "true",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "account",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+                "properties": {
+                    "visible": "",
+                    "hrefColumn": "account",
+                    "hrefParam": "id",
+                    "href": "account_new",
+                    "label": "Account",
+                    "confirmation": "",
+                    "target": "_self"
+                }
+            },
+            "style": "",
+            "id": "column_2",
+            "alignment": ""
+        },
+        {
+            "name": "fullName",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+                "properties": {
+                    "visible": "",
+                    "hrefColumn": "id",
+                    "hrefParam": "id",
+                    "href": "contact_new",
+                    "label": "Full Name",
+                    "confirmation": "",
+                    "target": "_self"
+                }
+            },
+            "id": "column_0",
+            "label": "First Name",
+            "sortable": "true"
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "lastName",
+            "action": "",
+            "id": "column_4",
+            "label": "Last Name",
+            "sortable": "true"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "dateCreated",
+    "description": "",
+    "filters": [
+        {
+            "hidden": "",
+            "name": "account",
+            "id": "filter_2",
+            "label": "Account",
+            "type": {
+                "className": "",
+                "properties": {}
+            },
+            "datalist_type": "filter",
+            "filterParamName": "d-6304176-fn_account"
+        },
+        {
+            "name": "fullName",
+            "id": "filter_0",
+            "label": "First Name",
+            "type": {
+                "className": "org.joget.apps.datalist.lib.TextFieldDataListFilterType",
+                "properties": {"defaultValue": ""}
+            },
+            "filterParamName": "d-6304176-fn_fullName"
+        },
+        {
+            "name": "lastName",
+            "id": "filter_1",
+            "label": "Last Name",
+            "filterParamName": "d-6304176-fn_lastName"
+        }
+    ],
+    "showDataWhenFilterSet": "",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "buttonPosition": "bottomLeft",
+    "hidePageSize": "",
+    "checkboxPosition": "left",
+    "name": "Contact List",
+    "id": "crm_contact_list",
+    "binder": {
+        "name": "",
+        "className": "org.joget.apps.datalist.lib.FormRowDataListBinder",
+        "properties": {"formDefId": "crm_contact"}
+    },
+    "actions": [
+        {
+            "name": "Data List Hyperlink Action",
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "label": "Hyperlink",
+            "id": "action_1",
+            "type": "text",
+            "properties": {
+                "visible": "true",
+                "href": "contact_new",
+                "label": "Add Contact",
+                "confirmation": "",
+                "datalist_type": "action",
+                "target": "_self"
+            }
+        },
+        {
+            "name": "Form Row Delete",
+            "className": "org.joget.apps.datalist.lib.FormRowDeleteDataListAction",
+            "id": "action_0",
+            "label": "Delete Row",
+            "type": "text",
+            "properties": {"formDefId": "crm_contact"}
+        }
+    ],
+    "order": "1"
+}

@@ -1,0 +1,102 @@
+{
+    "elements": [
+        {
+            "elements": [{
+                "elements": [{
+                    "className": "org.joget.apps.form.lib.SubForm",
+                    "properties": {
+                        "parentSubFormId": "",
+                        "loadBinder": {
+                            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                            "properties": {}
+                        },
+                        "readonly": "true",
+                        "formDefId": "crm_proposal_approval_form",
+                        "subFormParentId": "",
+                        "id": "approval",
+                        "label": "",
+                        "storeBinder": {
+                            "className": "org.joget.apps.form.lib.WorkflowFormBinder",
+                            "properties": {}
+                        }
+                    }
+                }],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "99%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "id": "section1",
+                "label": "Proposal Resubmit",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": ""
+            }
+        },
+        {
+            "elements": [{
+                "elements": [
+                    {
+                        "className": "org.joget.apps.form.lib.SubForm",
+                        "properties": {
+                            "parentSubFormId": "",
+                            "loadBinder": {
+                                "className": "",
+                                "properties": {}
+                            },
+                            "readonly": "",
+                            "formDefId": "crm_proposal_form",
+                            "subFormParentId": "",
+                            "id": "proposal",
+                            "label": "",
+                            "storeBinder": {
+                                "className": "",
+                                "properties": {}
+                            }
+                        }
+                    },
+                    {
+                        "className": "org.joget.apps.form.lib.HiddenField",
+                        "properties": {
+                            "workflowVariable": "status",
+                            "id": "status",
+                            "value": "pending"
+                        }
+                    }
+                ],
+                "className": "org.joget.apps.form.model.Column",
+                "properties": {"width": "99%"}
+            }],
+            "className": "org.joget.apps.form.model.Section",
+            "properties": {
+                "visibilityControl": "",
+                "loadBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "id": "section2",
+                "label": "Proposal Resubmission",
+                "storeBinder": {
+                    "className": "",
+                    "properties": {}
+                },
+                "visibilityValue": ""
+            }
+        }
+    ],
+    "className": "org.joget.apps.form.model.Form",
+    "properties": {
+        "loadBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "name": "Proposal Resubmit Form",
+        "id": "crm_proposal_resubmit_form",
+        "storeBinder": {"className": "org.joget.apps.form.lib.WorkflowFormBinder"},
+        "tableName": "crm_proposal"
+    }
+}

@@ -1,0 +1,773 @@
+<appDefinition>
+   <id>crm_community</id>
+   <version></version>
+   <name>CRM Community</name>
+   <packageDefinitionList>
+      <packageDefinition>
+         <appId>crm_community</appId>
+         <id>crm_community</id>
+         <name>CRM Community</name>
+         <packageActivityFormMap>
+            <entry>
+               <string>process1::runProcess</string>
+               <packageActivityForm>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>runProcess</activityDefId>
+                  <formId>crm_proposal_form</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>true</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+            <entry>
+               <string>process1::activity1</string>
+               <packageActivityForm>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>activity1</activityDefId>
+                  <formId>crm_proposal_resubmit_form</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>true</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+            <entry>
+               <string>process1::approve_proposal</string>
+               <packageActivityForm>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>approve_proposal</activityDefId>
+                  <formId>crm_proposal_approval_form</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>true</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+            <entry>
+               <string>process1::send_proposal</string>
+               <packageActivityForm>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>send_proposal</activityDefId>
+                  <formId>crm_proposal_sending_form</formId>
+                  <type>SINGLE</type>
+                  <autoContinue>true</autoContinue>
+                  <disableSaveAsDraft>false</disableSaveAsDraft>
+               </packageActivityForm>
+            </entry>
+         </packageActivityFormMap>
+         <packageActivityPluginMap>
+            <entry>
+               <string>process1::tool2</string>
+               <packageActivityPlugin>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>tool2</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.EmailTool</pluginName>
+                  <pluginProperties>{&quot;cc&quot;:&quot;&quot;,&quot;toSpecific&quot;:&quot;&quot;,&quot;bcc&quot;:&quot;&quot;,&quot;icsAttachement&quot;:&quot;&quot;,&quot;subject&quot;:&quot;Proposal Rejected: #form.crm_proposal.title#&quot;,&quot;formDefId&quot;:&quot;&quot;,&quot;toParticipantId&quot;:&quot;requester&quot;,&quot;message&quot;:&quot;Proposal Rejected\n\nRef No: #form.crm_proposal.refNo#\nTitle: #form.crm_proposal.title#&quot;,&quot;security&quot;:&quot;&quot;,&quot;password&quot;:&quot;&quot;,&quot;port&quot;:&quot;&quot;,&quot;isHtml&quot;:&quot;&quot;,&quot;host&quot;:&quot;&quot;,&quot;files&quot;:[],&quot;from&quot;:&quot;&quot;,&quot;fields&quot;:[],&quot;username&quot;:&quot;&quot;}</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+            <entry>
+               <string>process1::tool1</string>
+               <packageActivityPlugin>
+                  <processDefId>process1</processDefId>
+                  <activityDefId>tool1</activityDefId>
+                  <pluginName>org.joget.apps.app.lib.EmailTool</pluginName>
+                  <pluginProperties>{&quot;cc&quot;:&quot;&quot;,&quot;toSpecific&quot;:&quot;&quot;,&quot;bcc&quot;:&quot;&quot;,&quot;icsAttachement&quot;:&quot;&quot;,&quot;subject&quot;:&quot;Proposal Approved: #form.crm_proposal.title#&quot;,&quot;formDefId&quot;:&quot;&quot;,&quot;retryCount&quot;:&quot;&quot;,&quot;toParticipantId&quot;:&quot;requester&quot;,&quot;message&quot;:&quot;Proposal Approved\n\nRef No: #form.crm_proposal.refNo#\nTitle: #form.crm_proposal.title#&quot;,&quot;p12&quot;:&quot;&quot;,&quot;security&quot;:&quot;&quot;,&quot;password&quot;:&quot;&quot;,&quot;storepass&quot;:&quot;&quot;,&quot;port&quot;:&quot;&quot;,&quot;isHtml&quot;:&quot;&quot;,&quot;host&quot;:&quot;&quot;,&quot;files&quot;:[],&quot;alias&quot;:&quot;&quot;,&quot;from&quot;:&quot;&quot;,&quot;retryInterval&quot;:&quot;&quot;,&quot;fields&quot;:[],&quot;username&quot;:&quot;&quot;}</pluginProperties>
+               </packageActivityPlugin>
+            </entry>
+         </packageActivityPluginMap>
+         <packageParticipantMap>
+            <entry>
+               <string>process1::processStartWhiteList</string>
+               <packageParticipant>
+                  <processDefId>process1</processDefId>
+                  <participantId>processStartWhiteList</participantId>
+                  <type>role</type>
+                  <value>loggedInUser</value>
+               </packageParticipant>
+            </entry>
+            <entry>
+               <string>process1::requester</string>
+               <packageParticipant>
+                  <processDefId>process1</processDefId>
+                  <participantId>requester</participantId>
+                  <type>requester</type>
+                  <value>runProcess</value>
+               </packageParticipant>
+            </entry>
+            <entry>
+               <string>process1::approver</string>
+               <packageParticipant>
+                  <processDefId>process1</processDefId>
+                  <participantId>approver</participantId>
+                  <type>requesterHod</type>
+               </packageParticipant>
+            </entry>
+         </packageParticipantMap>
+      </packageDefinition>
+   </packageDefinitionList>
+   <formDefinitionList/>
+   <userviewDefinitionList/>
+   <datalistDefinitionList/>
+   <builderDefinitionList/>
+   <pluginDefaultPropertiesList/>
+   <environmentVariableList/>
+   <messageList>
+      <message>
+         <id>About_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>About</messageKey>
+         <locale>zh_CN</locale>
+         <message>关于</message>
+      </message>
+      <message>
+         <id>aboutpage_en_US</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>aboutpage</messageKey>
+         <locale>en_US</locale>
+         <message>&lt;h4 style=&quot;margin: 0px; padding: 0px; border-width: 0px; font-family: inherit; font-style: inherit; font-variant: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; font-stretch: inherit; vertical-align: baseline; font-weight: bold; color: #042c54;&quot;&gt;More Leads, More Sales, More Customers&lt;/h4&gt;
+&lt;h1 style=&quot;margin: 0px; padding: 0px; border-width: 0px; font: inherit; vertical-align: baseline; color: #1f4282;&quot;&gt;&lt;span style=&quot;font-size: large;&quot;&gt;&lt;strong&gt;Business&amp;nbsp;Customer Relationship Management&lt;/strong&gt;&lt;/span&gt;&lt;/h1&gt;
+&lt;p style=&quot;margin: 0px; padding: 30px 0px 0px; border-width: 0px; font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; font-size-adjust: inherit; font-stretch: inherit; vertical-align: baseline; color: #363636; line-height: 15px;&quot;&gt;CRM helps your business communicate with prospects, share sales information, close deals and keep customers happy.&lt;img src=&quot;http://www.joget.org/images/demo/phone_pad.png&quot; alt=&quot;&quot; width=&quot;382&quot; height=&quot;302&quot; /&gt;&lt;/p&gt;</message>
+      </message>
+      <message>
+         <id>aboutpage_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>aboutpage</messageKey>
+         <locale>zh_CN</locale>
+         <message>&lt;h4 style=&quot;margin: 0px; padding: 0px; border-width: 0px; font-family: inherit; font-style: inherit; font-variant: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; font-stretch: inherit; vertical-align: baseline; font-weight: bold; color: #042c54;&quot;&gt;更多线索，更多销售，更多客户&lt;/h4&gt;
+&lt;h1 style=&quot;margin: 0px; padding: 0px; border-width: 0px; font: inherit; vertical-align: baseline; color: #1f4282;&quot;&gt;&lt;span style=&quot;font-size: large;&quot;&gt;&lt;strong&gt;客户关系管理 (CRM)&lt;/strong&gt;&lt;/span&gt;&lt;/h1&gt;
+&lt;p style=&quot;margin: 0px; padding: 30px 0px 0px; border-width: 0px; font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; font-size-adjust: inherit; font-stretch: inherit; vertical-align: baseline; color: #363636; line-height: 15px;&quot;&gt;CRM帮助您的企业与潜在客户进行沟通，共享销售信息，达成交易并保持客户满意。&lt;img src=&quot;http://www.joget.org/images/demo/phone_pad.png&quot; alt=&quot;&quot; width=&quot;382&quot; height=&quot;302&quot; /&gt;&lt;/p&gt;</message>
+      </message>
+      <message>
+         <id>Account Details_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Account Details</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户详情</message>
+      </message>
+      <message>
+         <id>Account ID_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Account ID</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户ID</message>
+      </message>
+      <message>
+         <id>Account List_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Account List</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户列表</message>
+      </message>
+      <message>
+         <id>Account Name_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Account Name</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户名称</message>
+      </message>
+      <message>
+         <id>Account_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Account</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户</message>
+      </message>
+      <message>
+         <id>Accounts_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Accounts</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户</message>
+      </message>
+      <message>
+         <id>Add Account_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Add Account</messageKey>
+         <locale>zh_CN</locale>
+         <message>增加客户</message>
+      </message>
+      <message>
+         <id>Add Contact_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Add Contact</messageKey>
+         <locale>zh_CN</locale>
+         <message>增加联系人</message>
+      </message>
+      <message>
+         <id>Add Opportunity_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Add Opportunity</messageKey>
+         <locale>zh_CN</locale>
+         <message>增加机会</message>
+      </message>
+      <message>
+         <id>Address Available_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Address Available</messageKey>
+         <locale>zh_CN</locale>
+         <message>可用地址</message>
+      </message>
+      <message>
+         <id>Address Details_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Address Details</messageKey>
+         <locale>zh_CN</locale>
+         <message>详细地址</message>
+      </message>
+      <message>
+         <id>Address_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Address</messageKey>
+         <locale>zh_CN</locale>
+         <message>地址</message>
+      </message>
+      <message>
+         <id>Amount_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Amount</messageKey>
+         <locale>zh_CN</locale>
+         <message>金额</message>
+      </message>
+      <message>
+         <id>applicationName_en_US</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>applicationName</messageKey>
+         <locale>en_US</locale>
+         <message>Customer Relationship Management</message>
+      </message>
+      <message>
+         <id>applicationName_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>applicationName</messageKey>
+         <locale>zh_CN</locale>
+         <message>客户关系管理 (CRM)</message>
+      </message>
+      <message>
+         <id>Approved_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Approved</messageKey>
+         <locale>zh_CN</locale>
+         <message>批准</message>
+      </message>
+      <message>
+         <id>Approver Action_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Approver Action</messageKey>
+         <locale>zh_CN</locale>
+         <message>审批人决策</message>
+      </message>
+      <message>
+         <id>Approver Comments_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Approver Comments</messageKey>
+         <locale>zh_CN</locale>
+         <message>审批人评论</message>
+      </message>
+      <message>
+         <id>Attachment_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Attachment</messageKey>
+         <locale>zh_CN</locale>
+         <message>文件上传</message>
+      </message>
+      <message>
+         <id>City_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>City</messageKey>
+         <locale>zh_CN</locale>
+         <message>城市</message>
+      </message>
+      <message>
+         <id>Contact Details_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Contact Details</messageKey>
+         <locale>zh_CN</locale>
+         <message>详细联系方式</message>
+      </message>
+      <message>
+         <id>Contact List_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Contact List</messageKey>
+         <locale>zh_CN</locale>
+         <message>联系人列表</message>
+      </message>
+      <message>
+         <id>Contacts_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Contacts</messageKey>
+         <locale>zh_CN</locale>
+         <message>联系人</message>
+      </message>
+      <message>
+         <id>Country_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Country</messageKey>
+         <locale>zh_CN</locale>
+         <message>国家</message>
+      </message>
+      <message>
+         <id>Date Modified_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Date Modified</messageKey>
+         <locale>zh_CN</locale>
+         <message>更新日期</message>
+      </message>
+      <message>
+         <id>Delete Row_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Delete Row</messageKey>
+         <locale>zh_CN</locale>
+         <message>删除行</message>
+      </message>
+      <message>
+         <id>Delete_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Delete</messageKey>
+         <locale>zh_CN</locale>
+         <message>删除</message>
+      </message>
+      <message>
+         <id>Description_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Description</messageKey>
+         <locale>zh_CN</locale>
+         <message>描述</message>
+      </message>
+      <message>
+         <id>Direct_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Direct</messageKey>
+         <locale>zh_CN</locale>
+         <message>直接</message>
+      </message>
+      <message>
+         <id>Existing Account_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Existing Account</messageKey>
+         <locale>zh_CN</locale>
+         <message>现有客户</message>
+      </message>
+      <message>
+         <id>First Name_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>First Name</messageKey>
+         <locale>zh_CN</locale>
+         <message>名</message>
+      </message>
+      <message>
+         <id>form_hints_en_US</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>form_hints</messageKey>
+         <locale>en_US</locale>
+         <message>&lt;i&gt;Tasks and emails will be forwarded to &apos;admin&apos; user for approval. 
+You can change the settings &lt;a href=&quot;/jw/web/console/app/crm_community/1/processes/process1&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;&lt;br/&gt;&lt;/i&gt;</message>
+      </message>
+      <message>
+         <id>form_hints_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>form_hints</messageKey>
+         <locale>zh_CN</locale>
+         <message>&lt;i&gt;任务和电子邮件将转发给“管理员”用户以供批准。&lt;br/&gt;
+您可以在&lt;a href=&quot;/jw/web/console/app/crm_community/1/processes/process1&quot; target=&quot;_blank&quot;&gt;此处&lt;/a&gt; 更改设置。&lt;/i&gt;</message>
+      </message>
+      <message>
+         <id>Full Name_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Full Name</messageKey>
+         <locale>zh_CN</locale>
+         <message>姓名</message>
+      </message>
+      <message>
+         <id>Hidden_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Hidden</messageKey>
+         <locale>zh_CN</locale>
+         <message>隐藏</message>
+      </message>
+      <message>
+         <id>Home_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Home</messageKey>
+         <locale>zh_CN</locale>
+         <message>首页</message>
+      </message>
+      <message>
+         <id>Hyperlink_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Hyperlink</messageKey>
+         <locale>zh_CN</locale>
+         <message>连结</message>
+      </message>
+      <message>
+         <id>Indirect_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Indirect</messageKey>
+         <locale>zh_CN</locale>
+         <message>间接</message>
+      </message>
+      <message>
+         <id>International_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>International</messageKey>
+         <locale>zh_CN</locale>
+         <message>国际的</message>
+      </message>
+      <message>
+         <id>Last Name_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Last Name</messageKey>
+         <locale>zh_CN</locale>
+         <message>姓</message>
+      </message>
+      <message>
+         <id>Local_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Local</messageKey>
+         <locale>zh_CN</locale>
+         <message>本地的</message>
+      </message>
+      <message>
+         <id>Lost_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Lost</messageKey>
+         <locale>zh_CN</locale>
+         <message>失去</message>
+      </message>
+      <message>
+         <id>New Account_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>New Account</messageKey>
+         <locale>zh_CN</locale>
+         <message>新客户</message>
+      </message>
+      <message>
+         <id>New Contact_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>New Contact</messageKey>
+         <locale>zh_CN</locale>
+         <message>新联系人</message>
+      </message>
+      <message>
+         <id>New Opportunity_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>New Opportunity</messageKey>
+         <locale>zh_CN</locale>
+         <message>新机会</message>
+      </message>
+      <message>
+         <id>No_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>No</messageKey>
+         <locale>zh_CN</locale>
+         <message>否</message>
+      </message>
+      <message>
+         <id>Notes_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Notes</messageKey>
+         <locale>zh_CN</locale>
+         <message>说明</message>
+      </message>
+      <message>
+         <id>Open_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Open</messageKey>
+         <locale>zh_CN</locale>
+         <message>开始</message>
+      </message>
+      <message>
+         <id>Opportunities_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Opportunities</messageKey>
+         <locale>zh_CN</locale>
+         <message>机会</message>
+      </message>
+      <message>
+         <id>Opportunity List_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Opportunity List</messageKey>
+         <locale>zh_CN</locale>
+         <message>机会列表</message>
+      </message>
+      <message>
+         <id>Opportunity_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Opportunity</messageKey>
+         <locale>zh_CN</locale>
+         <message>机会</message>
+      </message>
+      <message>
+         <id>page_Proposals Inbox_header_en_US</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>page_Proposals Inbox_header</messageKey>
+         <locale>en_US</locale>
+         <message>Reminder to administrator for email notification to work:&lt;br/&gt;
+&lt;ul&gt;
+
+&lt;li&gt;Input the all users users email address in &lt;a href=&quot;/jw/web/console/directory/users&quot; target=&quot;_blank&quot;&gt;Setup Users&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Input your email SMTP credentials into the &lt;a href=&quot;/jw/web/console/setting/general&quot; target=&quot;_blank&quot;&gt;General Settings&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</message>
+      </message>
+      <message>
+         <id>page_Proposals Inbox_header_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>page_Proposals Inbox_header</messageKey>
+         <locale>zh_CN</locale>
+         <message>给Joget管理员使用电子邮件的提示：&lt;br/&gt;
+&lt;ul&gt;
+
+&lt;li&gt;在 &lt;a href=&quot;/jw/web/console/directory/users&quot; target=&quot;_blank&quot;&gt;系统设置 &gt; 设置用户&lt;/a&gt; 中输入所有用户的电子邮件地址。&lt;/li&gt;
+&lt;li&gt;在 &lt;a href=&quot;/jw/web/console/setting/general&quot; target=&quot;_blank&quot;&gt;系统设置 &gt; 常规设置&lt;/a&gt; 中输入您的Joget SMTP服务器配置以发送电子邮件。&lt;/li&gt;
+&lt;/ ul&gt;
+</message>
+      </message>
+      <message>
+         <id>Photo_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Photo</messageKey>
+         <locale>zh_CN</locale>
+         <message>图片上传</message>
+      </message>
+      <message>
+         <id>Proposal Approval_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Proposal Approval</messageKey>
+         <locale>zh_CN</locale>
+         <message>审批</message>
+      </message>
+      <message>
+         <id>Proposal Form_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Proposal Form</messageKey>
+         <locale>zh_CN</locale>
+         <message>建议书</message>
+      </message>
+      <message>
+         <id>Proposal Process_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Proposal Process</messageKey>
+         <locale>zh_CN</locale>
+         <message>建议书流程</message>
+      </message>
+      <message>
+         <id>Proposal Resubmission_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Proposal Resubmission</messageKey>
+         <locale>zh_CN</locale>
+         <message>退回的建议单</message>
+      </message>
+      <message>
+         <id>Proposal Resubmit_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Proposal Resubmit</messageKey>
+         <locale>zh_CN</locale>
+         <message>重新提交</message>
+      </message>
+      <message>
+         <id>Reference No_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Reference No</messageKey>
+         <locale>zh_CN</locale>
+         <message>参考编号</message>
+      </message>
+      <message>
+         <id>Rejected_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Rejected</messageKey>
+         <locale>zh_CN</locale>
+         <message>拒绝</message>
+      </message>
+      <message>
+         <id>Resubmit_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Resubmit</messageKey>
+         <locale>zh_CN</locale>
+         <message>重新提交</message>
+      </message>
+      <message>
+         <id>Send Proposal_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Send Proposal</messageKey>
+         <locale>zh_CN</locale>
+         <message>发送建议书</message>
+      </message>
+      <message>
+         <id>Source_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Source</messageKey>
+         <locale>zh_CN</locale>
+         <message>来源</message>
+      </message>
+      <message>
+         <id>Stage_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Stage</messageKey>
+         <locale>zh_CN</locale>
+         <message>阶段</message>
+      </message>
+      <message>
+         <id>State_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>State</messageKey>
+         <locale>zh_CN</locale>
+         <message>省份/直辖市</message>
+      </message>
+      <message>
+         <id>Status_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Status</messageKey>
+         <locale>zh_CN</locale>
+         <message>状态</message>
+      </message>
+      <message>
+         <id>Submit New Proposal_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Submit New Proposal</messageKey>
+         <locale>zh_CN</locale>
+         <message>提交新建议书</message>
+      </message>
+      <message>
+         <id>Task Inbox_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Task Inbox</messageKey>
+         <locale>zh_CN</locale>
+         <message>任务收件箱</message>
+      </message>
+      <message>
+         <id>Title_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Title</messageKey>
+         <locale>zh_CN</locale>
+         <message>职位</message>
+      </message>
+      <message>
+         <id>View All Proposals_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>View All Proposals</messageKey>
+         <locale>zh_CN</locale>
+         <message>所有建议书</message>
+      </message>
+      <message>
+         <id>View Proposal_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>View Proposal</messageKey>
+         <locale>zh_CN</locale>
+         <message>观看建议书</message>
+      </message>
+      <message>
+         <id>View_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>View</messageKey>
+         <locale>zh_CN</locale>
+         <message>观看</message>
+      </message>
+      <message>
+         <id>Welcome_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Welcome</messageKey>
+         <locale>zh_CN</locale>
+         <message>欢迎</message>
+      </message>
+      <message>
+         <id>Won_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Won</messageKey>
+         <locale>zh_CN</locale>
+         <message>赢得</message>
+      </message>
+      <message>
+         <id>Yes_zh_CN</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <messageKey>Yes</messageKey>
+         <locale>zh_CN</locale>
+         <message>是</message>
+      </message>
+   </messageList>
+   <resourceList>
+      <appResource>
+         <id>crm.png</id>
+         <appId>crm_community</appId>
+         <appVersion>1</appVersion>
+         <filesize>32567</filesize>
+         <permissionProperties>{&quot;hashvariable&quot;:&quot;#appResource.crm.png#&quot;,&quot;permission&quot;:{&quot;className&quot;:&quot;&quot;,&quot;properties&quot;:{}}}</permissionProperties>
+      </appResource>
+   </resourceList>
+   <license>Vfe6Df5AdlrGEPqFYgTt8XuGJ4XiTt2NnBLEovw3qoQ=</license>
+</appDefinition>

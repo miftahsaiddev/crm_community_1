@@ -1,0 +1,476 @@
+{
+    "layout": {
+        "className": "org.joget.apps.userview.model.UserviewLayout",
+        "properties": {
+            "customHeader": "",
+            "afterMenu": "",
+            "beforeMenu": "",
+            "customFooter": "",
+            "theme": {
+                "className": "org.joget.apps.userview.lib.DefaultTheme",
+                "properties": {
+                    "css": "",
+                    "js": ""
+                }
+            }
+        }
+    },
+    "className": "org.joget.apps.userview.model.Userview",
+    "categories": [
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "permission": {
+                "className": "org.joget.apps.userview.model.UserviewPermission",
+                "properties": {}
+            },
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.HtmlPage",
+                "properties": {
+                    "userviewCacheDuration": "20",
+                    "userviewCacheScope": "",
+                    "enableOffline": "",
+                    "id": "welcome",
+                    "label": "Welcome",
+                    "customId": "welcome",
+                    "content": "<div id=\"left_content\">\n<div style=\"margin-right: 10px;\">\n<h4 style=\"margin: 0px; padding: 0px; border-width: 0px; font-family: inherit; font-style: inherit; font-variant: inherit; font-size: inherit; line-height: inherit; font-size-adjust: inherit; font-stretch: inherit; vertical-align: baseline; font-weight: bold; color: #042c54;\">More Leads, More Sales, More Customers<\/h4>\n<h1 style=\"margin: 0px; padding: 0px; border-width: 0px; font: inherit; vertical-align: baseline; color: #1f4282;\"><span style=\"font-size: large;\"><strong>Business&nbsp;Customer Relationship Management<\/strong><\/span><\/h1>\n<p style=\"margin: 0px; padding: 30px 0px 0px; border-width: 0px; font-family: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-size: inherit; font-size-adjust: inherit; font-stretch: inherit; vertical-align: baseline; color: #363636; line-height: 15px;\">CRM helps your business communicate with prospects, share sales information, close deals and keep customers happy.<img src=\"http://www.joget.org/images/demo/phone_pad.png\" alt=\"\" width=\"382\" height=\"302\"><\/p>\n<\/div>\n<\/div>"
+                }
+            }],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.plugin.enterprise.AnonymousUserviewPermission",
+                    "properties": {}
+                },
+                "id": "category-9BE91A55FAAC4B5098841EA9E1994BE6",
+                "label": "Home"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "permission": {
+                "className": "org.joget.apps.userview.model.UserviewPermission",
+                "properties": {}
+            },
+            "menus": [
+                {
+                    "className": "org.joget.apps.userview.lib.DataListMenu",
+                    "properties": {
+                        "cacheAllLinks": "",
+                        "customHeader": "<h2>#i18n.Account List#<\/h2>",
+                        "keyName": "",
+                        "customFooter": "",
+                        "enableOffline": "",
+                        "label": "Account List",
+                        "customId": "account_list",
+                        "buttonPosition": "topLeft",
+                        "datalistId": "crm_account_list",
+                        "checkboxPosition": "left",
+                        "selectionType": "multiple",
+                        "userviewCacheDuration": "20",
+                        "cacheListAction": "",
+                        "userviewCacheScope": "",
+                        "id": "384344BD3E2946D097C6F5F17540C377",
+                        "rowCount": "true"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.FormMenu",
+                    "properties": {
+                        "formId": "crm_account",
+                        "customHeader": "",
+                        "loadDataWithKey": "",
+                        "redirectUrlOnCancel": "account_list",
+                        "fieldPassoverMethod": "append",
+                        "redirectTargetOnCancel": "top",
+                        "keyName": "",
+                        "customFooter": "",
+                        "label": "New Account",
+                        "paramName": "",
+                        "customId": "account_new",
+                        "messageShowAfterComplete": "",
+                        "userviewCacheDuration": "20",
+                        "showInPopupDialog": "",
+                        "submitButtonLabel": "",
+                        "cancelButtonLabel": "",
+                        "readonly": "",
+                        "userviewCacheScope": "",
+                        "id": "account_form",
+                        "fieldPassover": "",
+                        "redirectUrlAfterComplete": "account_list",
+                        "readonlyLabel": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-7650DEEFC4CC4332AC25871B65BBDD48",
+                "label": "Accounts"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "permission": {
+                "className": "org.joget.apps.userview.model.UserviewPermission",
+                "properties": {}
+            },
+            "menus": [
+                {
+                    "className": "org.joget.apps.userview.lib.DataListMenu",
+                    "properties": {
+                        "cacheAllLinks": "",
+                        "customHeader": "<h2>#i18n.Contact List#<\/h2>",
+                        "keyName": "",
+                        "customFooter": "",
+                        "enableOffline": "",
+                        "label": "Contact List",
+                        "customId": "contact_list",
+                        "buttonPosition": "topLeft",
+                        "datalistId": "crm_contact_list",
+                        "checkboxPosition": "left",
+                        "selectionType": "multiple",
+                        "userviewCacheDuration": "20",
+                        "cacheListAction": "",
+                        "userviewCacheScope": "",
+                        "id": "D86B740C970C4B08B4D5CCD3DC0E9503",
+                        "rowCount": "true"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.FormMenu",
+                    "properties": {
+                        "formId": "crm_contact",
+                        "customHeader": "",
+                        "loadDataWithKey": "",
+                        "redirectUrlOnCancel": "contact_list",
+                        "fieldPassoverMethod": "append",
+                        "redirectTargetOnCancel": "top",
+                        "keyName": "",
+                        "customFooter": "",
+                        "label": "New Contact",
+                        "paramName": "",
+                        "customId": "contact_new",
+                        "messageShowAfterComplete": "",
+                        "userviewCacheDuration": "20",
+                        "showInPopupDialog": "",
+                        "submitButtonLabel": "",
+                        "cancelButtonLabel": "",
+                        "readonly": "",
+                        "userviewCacheScope": "",
+                        "id": "contact-form",
+                        "fieldPassover": "",
+                        "redirectUrlAfterComplete": "contact_list",
+                        "readonlyLabel": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-E77D2050680D4DB0A85A5C0C3AC1C083",
+                "label": "Contacts"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "permission": {
+                "className": "org.joget.apps.userview.model.UserviewPermission",
+                "properties": {}
+            },
+            "menus": [
+                {
+                    "className": "org.joget.apps.userview.lib.DataListMenu",
+                    "properties": {
+                        "cacheAllLinks": "",
+                        "customHeader": "<h2>#i18n.Opportunity List#<\/h2>",
+                        "keyName": "",
+                        "customFooter": "",
+                        "enableOffline": "",
+                        "label": "Opportunity List",
+                        "customId": "opportunity_list",
+                        "buttonPosition": "topLeft",
+                        "datalistId": "crm_opportunity_list",
+                        "checkboxPosition": "left",
+                        "selectionType": "multiple",
+                        "userviewCacheDuration": "20",
+                        "cacheListAction": "",
+                        "userviewCacheScope": "",
+                        "id": "A074397ABEA94CF78E2E8FA0843AB97B",
+                        "rowCount": "true"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.FormMenu",
+                    "properties": {
+                        "formId": "crm_opportunity",
+                        "customHeader": "",
+                        "loadDataWithKey": "",
+                        "redirectUrlOnCancel": "opportunity_list",
+                        "fieldPassoverMethod": "append",
+                        "redirectTargetOnCancel": "top",
+                        "keyName": "",
+                        "customFooter": "",
+                        "label": "New Opportunity",
+                        "paramName": "",
+                        "customId": "opportunity_new",
+                        "messageShowAfterComplete": "",
+                        "userviewCacheDuration": "20",
+                        "showInPopupDialog": "",
+                        "submitButtonLabel": "",
+                        "cancelButtonLabel": "",
+                        "readonly": "",
+                        "userviewCacheScope": "",
+                        "id": "0C7E36768A2F46BB945CEC50E62E0BE8",
+                        "fieldPassover": "",
+                        "redirectUrlAfterComplete": "opportunity_list",
+                        "readonlyLabel": ""
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-A12DBDB14B4447A984E6095B77F28B42",
+                "label": "Opportunities"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [
+                {
+                    "className": "org.joget.apps.userview.lib.DataListMenu",
+                    "properties": {
+                        "cacheAllLinks": "",
+                        "customHeader": "<h2>#i18n.View All Proposals#<\/h2>",
+                        "keyName": "",
+                        "customFooter": "",
+                        "enableOffline": "",
+                        "label": "View All Proposals",
+                        "customId": "view_all_proposal",
+                        "buttonPosition": "topLeft",
+                        "datalistId": "Proposal",
+                        "checkboxPosition": "left",
+                        "selectionType": "multiple",
+                        "userviewCacheDuration": "20",
+                        "cacheListAction": "",
+                        "userviewCacheScope": "",
+                        "id": "9E98D32002434ABFAABA3649DCA300F5",
+                        "rowCount": "true"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.InboxMenu",
+                    "properties": {
+                        "appFilter": "process",
+                        "list-customFooter": "",
+                        "cacheAllLinks": "",
+                        "assignment-customHeader": "",
+                        "assignment-customFooter": "",
+                        "enableOffline": "",
+                        "label": "Task Inbox",
+                        "customId": "workflow_inbox",
+                        "buttonPosition": "topLeft",
+                        "userviewCacheDuration": "20",
+                        "processId": "process1",
+                        "userviewCacheScope": "",
+                        "id": "AA1445B29D904408B3F2B1B36E469E16",
+                        "rowCount": "true",
+                        "list-customHeader": "<h2>#i18n.Task Inbox#<\/h2>\r\n#i18n.page_Proposals Inbox_header#"
+                    }
+                },
+                {
+                    "className": "org.joget.apps.userview.lib.RunProcess",
+                    "properties": {
+                        "runProcessDirectly": "Yes",
+                        "fieldPassoverMethod": "append",
+                        "keyName": "",
+                        "label": "Submit New Proposal",
+                        "paramName": "",
+                        "customId": "proposal_process",
+                        "messageShowAfterComplete": "",
+                        "userviewCacheDuration": "20",
+                        "showInPopupDialog": "",
+                        "userviewCacheScope": "",
+                        "runProcessSubmitLabel": "",
+                        "id": "2D27B3875F234315A7A3562BD0E35AB2",
+                        "fieldPassover": "",
+                        "processDefId": "process1",
+                        "redirectUrlAfterComplete": "view_all_proposal"
+                    }
+                }
+            ],
+            "properties": {
+                "hide": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-78EC0B8A1E8E483A93770714BB0D6F6E",
+                "label": "Proposal Process"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.HtmlPage",
+                "properties": {
+                    "userviewCacheDuration": "20",
+                    "userviewCacheScope": "",
+                    "enableOffline": "",
+                    "id": "765269E3926049B0A21D16581EE188DF",
+                    "label": "About",
+                    "customId": "about",
+                    "content": "<div id=\"left_content\">\n<div style=\"float: left; width: 400px; margin-right: 10px;\">#i18n.aboutpage#<\/div>\n<\/div>"
+                }
+            }],
+            "properties": {
+                "hide": "",
+                "comment": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-8739F2859D894A339404C2404CB9004E",
+                "label": "a"
+            }
+        },
+        {
+            "className": "org.joget.apps.userview.model.UserviewCategory",
+            "menus": [{
+                "className": "org.joget.apps.userview.lib.FormMenu",
+                "properties": {
+                    "formId": "crm_proposal_approval_form",
+                    "customHeader": "",
+                    "loadDataWithKey": "",
+                    "redirectUrlOnCancel": "view_all_proposal",
+                    "fieldPassoverMethod": "append",
+                    "redirectTargetOnCancel": "top",
+                    "keyName": "",
+                    "customFooter": "",
+                    "label": "View Proposal",
+                    "paramName": "",
+                    "customId": "ViewProposal",
+                    "messageShowAfterComplete": "",
+                    "userviewCacheDuration": "20",
+                    "showInPopupDialog": "",
+                    "submitButtonLabel": "",
+                    "cancelButtonLabel": "",
+                    "readonly": "Yes",
+                    "userviewCacheScope": "",
+                    "id": "1A2E6106918040F484C342E1BB12B2A3",
+                    "fieldPassover": "",
+                    "redirectUrlAfterComplete": "view_all_proposal",
+                    "readonlyLabel": ""
+                }
+            }],
+            "properties": {
+                "hide": "yes",
+                "comment": "",
+                "permission": {
+                    "className": "org.joget.apps.userview.lib.LoggedInUserPermission",
+                    "properties": {}
+                },
+                "id": "category-1AFAC018AFA848F2970403061E49EE72",
+                "label": "Hidden"
+            }
+        }
+    ],
+    "properties": {
+        "logoutText": "Logout",
+        "welcomeMessage": "Sales Force Automation",
+        "name": "#i18n.applicationName#",
+        "description": "",
+        "footerMessage": "Powered by Joget",
+        "id": "crm_userview_sales"
+    },
+    "setting": {
+        "className": "org.joget.apps.userview.model.UserviewSetting",
+        "properties": {
+            "__": "",
+            "userviewDescription": "",
+            "userviewId": "crm_userview_sales",
+            "hideThisUserviewInAppCenter": "",
+            "userview_thumbnail": "#appResource.crm.png#",
+            "userview_category": "",
+            "permission": {
+                "className": "",
+                "properties": {}
+            },
+            "theme": {
+                "className": "org.joget.plugin.enterprise.Dx8ColorAdminTheme",
+                "properties": {
+                    "dx8navBadge": "",
+                    "css": "",
+                    "primaryColor": "DARKROYALBLUE",
+                    "loginBackground": "",
+                    "disablePush": "",
+                    "dx8navLinkColor": "",
+                    "removeAssignmentTitle": "",
+                    "shortcutLinkLabel": "Shortcut",
+                    "disableHelpGuide": "",
+                    "logo": "",
+                    "enableResponsiveSwitch": "true",
+                    "dx8headerFontColor": "",
+                    "fav_icon": "",
+                    "dx8navLinkIcon": "",
+                    "horizontal_menu": "",
+                    "accentColor": "BLUE",
+                    "profile": "",
+                    "homeAttractBanner": "",
+                    "dx8headingBgColor": "",
+                    "dx8linkColor": "",
+                    "homeUrl": "",
+                    "dx8linkActiveColor": "",
+                    "disablePwa": "",
+                    "dx8footerColor": "",
+                    "subheader": "",
+                    "dx8contentbackground": "",
+                    "loginPageBottom": "",
+                    "dx8backgroundImage": "",
+                    "themeScheme": "light",
+                    "dx8navBadgeText": "",
+                    "dx8background": "",
+                    "dx8headerColor": "",
+                    "dx8colorScheme": "rgb(233, 233, 233);rgb(255, 255, 255);rgb(157, 235, 249);rgb(0, 114, 82);rgb(0, 131, 143);rgb(0, 86, 98)",
+                    "dx8navBackground": "",
+                    "buttonColor": "GREY",
+                    "displayCategoryLabel": "",
+                    "js": "",
+                    "dx8navActiveIconColor": "",
+                    "dx8navScrollbarThumb": "",
+                    "loginPageTop": "",
+                    "urlsToCache": "",
+                    "userMenu": [],
+                    "dx8buttonColor": "",
+                    "shortcut": [],
+                    "userImage": "",
+                    "fontControl": "",
+                    "buttonTextColor": "WHITE",
+                    "dx8navActiveLinkBackground": "",
+                    "dx8fontColor": "",
+                    "menuFontColor": "BLACK",
+                    "dx8navLinkBackground": "",
+                    "dx8buttonBackground": "",
+                    "dx8contentFontColor": "",
+                    "subfooter": "",
+                    "dx8footerBackground": "",
+                    "dx8headingFontColor": "",
+                    "dx8primaryColor": "",
+                    "dx8navActiveLinkColor": "",
+                    "inbox": "current",
+                    "fontColor": "WHITE"
+                }
+            },
+            "userviewName": "CRM"
+        }
+    }
+}

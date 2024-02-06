@@ -1,0 +1,152 @@
+{
+    "considerFilterWhenGetTotal": "",
+    "template": {
+        "className": "",
+        "properties": {}
+    },
+    "useSession": "",
+    "showPageSizeSelector": "true",
+    "rowActions": [],
+    "columns": [
+        {
+            "name": "title",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "action": {
+                "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+                "properties": {
+                    "hrefColumn": "id",
+                    "hrefParam": "id",
+                    "href": "opportunity_new",
+                    "label": "Title",
+                    "confirmation": "",
+                    "target": "_self"
+                }
+            },
+            "id": "column_0",
+            "label": "Title",
+            "sortable": "true"
+        },
+        {
+            "hidden": "false",
+            "renderHtml": "",
+            "format": {
+                "className": "",
+                "properties": {}
+            },
+            "label": "Account",
+            "sortable": "true",
+            "datalist_type": "column",
+            "exclude_export": "",
+            "name": "account",
+            "width": "",
+            "headerAlignment": "",
+            "action": {
+                "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+                "properties": {
+                    "hrefColumn": "account",
+                    "hrefParam": "id",
+                    "href": "account_new",
+                    "label": "Account",
+                    "confirmation": "",
+                    "target": "_self"
+                }
+            },
+            "style": "",
+            "id": "column_4",
+            "alignment": ""
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "amount",
+            "action": "",
+            "id": "column_2",
+            "label": "Amount",
+            "sortable": "true"
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "stage",
+            "action": "",
+            "id": "column_3",
+            "label": "Stage",
+            "sortable": "true"
+        },
+        {
+            "filterable": "true",
+            "formats": ";",
+            "name": "dateModified",
+            "action": "",
+            "id": "column_1",
+            "label": "Date Modified",
+            "sortable": "true"
+        }
+    ],
+    "pageSize": "0",
+    "orderBy": "dateCreated",
+    "description": "",
+    "filters": [
+        {
+            "hidden": "",
+            "name": "account",
+            "id": "filter_1",
+            "label": "Account",
+            "type": {
+                "className": "",
+                "properties": {}
+            },
+            "datalist_type": "filter",
+            "filterParamName": "d-4412661-fn_account"
+        },
+        {
+            "name": "title",
+            "id": "filter_0",
+            "label": "Title",
+            "filterParamName": "d-4412661-fn_title"
+        }
+    ],
+    "showDataWhenFilterSet": "",
+    "pageSizeSelectorOptions": "10,20,30,40,50,100",
+    "buttonPosition": "bottomLeft",
+    "hidePageSize": "",
+    "checkboxPosition": "left",
+    "name": "Opportunity List",
+    "id": "crm_opportunity_list",
+    "binder": {
+        "name": "",
+        "className": "org.joget.apps.datalist.lib.FormRowDataListBinder",
+        "properties": {"formDefId": "crm_opportunity"}
+    },
+    "actions": [
+        {
+            "name": "Data List Hyperlink Action",
+            "className": "org.joget.apps.datalist.lib.HyperlinkDataListAction",
+            "label": "Hyperlink",
+            "id": "action_1",
+            "type": "text",
+            "properties": {
+                "visible": "true",
+                "hrefColumn": "",
+                "hrefParam": "",
+                "href": "opportunity_new",
+                "label": "Add Opportunity",
+                "confirmation": "",
+                "datalist_type": "action",
+                "target": "_self"
+            }
+        },
+        {
+            "name": "Form Row Delete",
+            "className": "org.joget.apps.datalist.lib.FormRowDeleteDataListAction",
+            "id": "action_0",
+            "label": "Delete Row",
+            "type": "text",
+            "properties": {"formDefId": "crm_opportunity"}
+        }
+    ],
+    "order": "1"
+}
